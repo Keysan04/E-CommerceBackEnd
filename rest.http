@@ -1,0 +1,65 @@
+
+@rootUrl = http://localhost:8000/api/v1
+@userApi = {{rootUrl}}/users
+
+
+POST {{userApi}}
+Content-Type: application/json
+
+{
+    "fName": "kisan",
+    "lName": "Thapa",
+    "password": "12",
+    "email": "ks@gmail.com"
+}
+
+
+###
+POST {{userApi}}/create-payment-intent
+Content-Type: application/json
+
+{
+    "amount": "500",
+    "currency": "AUD",
+    "paymentMethodType": "card"
+   
+}
+ 
+
+###
+
+PUT {{userApi}}/update
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtzQGdtYWlsLmNvbSIsImlhdCI6MTcwNjA5NzgzOSwiZXhwIjoxNzA2MDk4NzM5fQ.9k4tG7BrC5VXqWGCTE-QBWZFL3y58bAGlyKTXWhcbOA
+
+{
+    "_id": "65af42a3756f2b7395ab9488",
+    "fName": "kisans",
+    "lName": "Thapa",
+    "password": "12",
+    "email": "ks@gmail.com",
+    "phone": "1234",
+    "address": "Northumberland Road"
+
+}
+
+
+ 
+###
+ POST {{userApi}}/signin
+Content-Type: application/json
+
+{
+   "email" : "ks@gmail.com",
+   "password": "12"
+}
+###
+get {{userApi}}/categories
+
+
+###
+get {{userApi}}/products/65adc333803cc5a2227d1234
+
+###
+
+get {{userApi}}/item/65a6ed685d49c00082770fe4
